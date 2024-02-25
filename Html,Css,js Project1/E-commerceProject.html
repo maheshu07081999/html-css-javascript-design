@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+       <link href="https://fonts.googleapis.com/css2?family=Jost&family=Roboto:wght@300&family=Rubik&display=swap"
+           rel="stylesheet" />
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+       <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+       <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+
+       <!-- <link rel="stylesheet" href="style.css" /> -->
+       <title>Apani Dukan</title>
+  </head>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+body{
+    font-family: 'Jost', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Rubik', sans-serif;
+font-family: 'Jost', sans-serif;
+font-family: 'Rubik', sans-serif;
+}
+:root{
+    --primary:indianred;
+    --secondary:rgba(15, 10, 29, 0.849);
+    --light:#2f3640;
+}
+header{
+    width: 100%;
+    /* height: 100vh;  */
+}
+.nav1{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 2px 0px 3px grey;
+    text-align: center;
+}
+.nav1 .left{
+    flex-basis:50%;
+    letter-spacing: 2px;
+}
+.nav1 .left a{
+    text-decoration: none;
+    color:var(--primary);
+    font-weight: bold;
+    margin: 0 5px;
+}
+.right i{
+    font-size: 20px;
+    margin: 0px 15px;
+    background-color: var(--primary);
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.nav1 .right i:hover{
+    transform: rotate(360deg);
+}
+.nav2{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.nav2 .nav-left, .nav2 .nav2-center, .nav2 .nav2-right{
+    flex-basis: 30%;
+    margin: auto;
+    cursor: pointer;
+}
+.nav2 .nav2-left i{
+    margin-left: 15px;
+}
+.nav2 .nav2-center h1{
+    color: var(--primary);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+.nav2 .nav2-center h1 span{
+    color: var(--secondary);
+}
+.nav2 .nav2-center p{
+    color: grey;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.nav2 .nav2-right i{
+    margin:0px 5px;
+}
+.nav3{
+    width: 100%;
+    height: 70px;
+    line-height: 70%;
+}
+.nav3 ul{
+    list-style: none;
+    text-align: center;
+}
+.nav3 ul li{
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    z-index: 99;
+}
+.nav3 ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+
+}
+.nav3 ul li a:hover{
+    color: var(--primary);
+}
+.nav3 ul li i{
+    color: var(--primary);
+    margin: 0px 5px;
+}
+.nav3 ul ul{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+}
+.nav3 ul ul li{
+    background-color:rgb(208, 224, 223);
+    border-bottom: 1px var(--primary);
+    margin-top: 10px;
+    color: white;
+    width: 100px;
+    height: 20px;
+    border-radius: 2px;
+}
+.nav3 ul li:hover>ul{
+    display: block;
+}
+.featured{
+    width: 100%;
+    height: 80vh;
+    background:linear-gradient(to right,rgba(0,0,0,0.8)20%,rgba(255,255,255,0.2)), url('g1.jpg');
+    background-size: cover;
+    background-position:top;
+    position: relative;
+}
+.featured-text{
+    max-width: 500px;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    color:white;
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+.featured-text button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color:var(--secondary);
+    margin: 20px 0px;
+    color: white;
+    cursor: pointer;
+}
+.latest{
+    padding:50px 100px;
+
+}
+.product-intro{
+    text-align: center;
+}
+.product-intro h1{
+    color: var(--primary);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.product-intro h1 span{
+    color: var(--secondary);
+
+}
+.product-intro p{
+    color: grey;
+    margin: 15px 0px;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+}
+.card-container .card{
+    flex-basis:20%;
+    padding: 0.8rem;
+    position: relative;
+}
+.card img{
+    width: 100%;
+    transition:0.5s ease-in-out;
+}
+.card i{
+    color: goldenrod;
+    margin: 10px 0;
+
+}
+.card button{
+    color: white;
+    background-color: var(--secondary);
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+.card:hover img, .card:hover h1{
+    width: 80%;
+    color: var(--primary);
+   
+}
+.card::before{
+    content: '20%off';
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary);
+    padding: 0px 4px;
+    transform: rotate(-20deg);
+}
+.trends{
+    padding:50px 100px;
+    background-color: rgba(0,0,0,0.02);
+}
+.trends .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* display: flex; */
+  }
+  .swiper-wrapper{
+    display: flex;
+  }
+
+  .trends .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 24%;
+    height: 400px;
+  }
+
+  .trends .swiper-slide img {
+    /* display: block;  */
+    width: 100%;
+  }
+  footer{
+    background-color: var(--secondary);
+    color: white;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  footer div{
+    flex-basis: 30%;
+  }
+  footer h1 span{
+    color: var(--primary);
+  }
+  footer p{
+    font-size: 1rem;
+  }
+  footer i{
+    margin: 0px 5px;
+  }
+  #sidenav{
+    display: none;
+  }
+ #menubar{
+    display: none;
+ }
+
+
+/* Media query Responsivness */
+
+@media only screen and (max-width:769px){
+    #sidenav{
+        display: block;
+    }
+    #menubar{
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        transform: translate(0%,-50%);
+        z-index: 99;
+        background-color: var(--primary);
+        color: white;
+        font-size: 2rem;
+        padding: 20px 10px; 
+        animation: animate 5s ease infinite;
+    }
+    @keyframes animate {
+        0%{
+            background-color: var(--secondary);
+        }
+        100%{
+            background-color: var(--primary);
+        }
+        
+    }
+    #sidenav{
+        width:0px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background-color:black;
+        padding-top: 70px;
+        display: block;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+    }
+    #sidenav ul{ 
+        list-style: none;
+       
+    }
+    #sidenav ul li{
+        display: block;
+        width: 200px;
+        position: relative;
+        z-index: 99;
+        margin:10px 20px;
+    }
+    #sidenav ul li a{
+        text-decoration: none;
+        color:white;
+        font-weight: 500;
+        display: block;
+        font-size: 20px;
+        padding: 10px 20px;
+    
+    }
+    #sidenav ul li a:hover{
+        color: var(--primary);
+    }
+    #sidenav ul li i{
+        color: var(--primary);
+        margin: 0px 5px;
+    }
+    #sidenav ul ul{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        display: none;
+    }
+    #sidenav ul ul li{
+       
+        border-bottom: 1px solid white;
+        margin: 5px;
+    }
+    #sidenav ul li:hover>ul{
+        display: block;
+    }
+
+    .nav1{
+        position: relative;
+        z-index: 2;
+        background-color: white;
+    }
+    .right i{
+        font-size: 15px;
+        margin: 0px 5px;
+    }
+    .nav2{
+        width: 100%;
+        height: 80px;
+    }
+    .nav .nav2-left i{
+        margin-left: 0px;
+    }
+    .nav2 .nav2-center h1{
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+    .nav2 .nav2-center p{
+        color: grey;
+        font-size: 10px;
+        margin-top: 5px;
+
+    }
+    .nav2 .nav2-right i{
+        margin: 0px 5px;
+    }
+    .nav3{
+        display: none;
+    }
+    .featured{
+        background-attachment: fixed;
+    }
+
+
+
+    .latest{
+        padding:0px 50px;
+    
+    }
+    .product-intro{
+        text-align: center;
+    }
+    .product-intro h1{
+        color: var(--primary);
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .product-intro h1 span{
+        color: var(--secondary);
+    
+    }
+    .product-intro p{
+        color: grey;
+        margin: 15px 0px;
+    }
+    .card-container{
+      margin: 2rem 0;
+    }
+    .card-container .card{
+        flex-basis:100%;
+        padding: 0.8rem;
+        position: relative;
+        text-align: center;
+    }
+    .card img{
+        width: 100%;
+        transition:0.5s ease-in-out;
+    }
+    .card i{
+        color: goldenrod;
+        margin: 10px 0;
+    
+    }
+    .card button{
+        color: white;
+        background-color: var(--secondary);
+        border: none;
+        outline: none;
+        margin-top: 15px;
+        padding: 5px 5px;
+        cursor: pointer;
+    }
+    .trends{
+        padding:20px 50px;
+        background-color: rgba(0,0,0,0.02);
+    }
+    .trends .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+    
+      .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 90%;
+        height: 400px;
+      }
+    
+      .trends .swiper-slide img {
+        display: block; 
+        width: 100%;
+      }
+      /* .swiper-container{
+          
+    } */
+    .swiper-wrapper{
+          display: block;
+          width: 100%;
+          position: relative;
+       
+      }
+      footer div{
+        flex-basis: 30%;
+        margin-top: 300px;
+     }
+  }
+   
+  </style>
+  <body>
+      <header>
+          <!-- Nav 1 start -->
+          <nav class="nav1">
+              <div class="left">
+                  <span>Welcome To MY E-shop</span>
+                  <a href="#">Register</a>OR
+                  <a href="#">Login</a>
+              </div>
+              <div class="right">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-instagram"></i>
+                  <i class="fa fa-whatsapp"></i>
+                  <i class="fa fa-twitter"></i>
+                  <i class="fa fa-pinterest"></i>
+              </div>
+          </nav>
+          <!-- Nav 1 end -->
+  
+          <!-- Nav 2 start -->
+          <nav class="nav2">
+              <div class="nav2-left">
+                  <i class="fa fa-phone"></i> +91 7420803968...
+                  <i class="fa fa-envelope"></i> mutage1999@gmail.com
+              </div>
+              <div class="nav2-center">
+                  <h1>Apani <span>Dukan</span></h1>
+                  <p>Everything For Kids World</p>
+              </div>
+              <div class="nav2-right"><i class="fa fa-map"></i> Contact us</div>
+          </nav>
+          <!-- Nav 2 end -->
+          <nav class="nav3">
+              <ul>
+                  <li>
+                      <a href="#"><i class="fa fa-home"></i>Home</a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fa fa-user"></i>Boy</a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fa fa-users"></i>Accesories</a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fa fa-anchor"></i>Toys<i class="fa fa-caret-down"></i></a>
+                      <ul>
+                          <li>
+                              <a href="#"><i class="fa fa-clipboard"></i>Wooden</a>
+                          </li>
+                          <li>
+                              <a href="#"><i class="fa fa-circle-o"></i>Plastic</a>
+                          </li>
+                          <li>
+                              <a href="#"><i class="fa fa-gavel"></i>Iron</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fa fa-caret-down"></i>Special</a>
+                  </li>
+                  <li>
+                      <a href="#"><i class="fa fa-search"></i>Find</a>
+                  </li>
+              </ul>
+          </nav>
+          <section id="sidenav">
+            <ul>
+                <li>
+                    <a href="#"><i class="fa fa-home"></i>Home</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user"></i>Boy</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-users"></i>Accesories</a>
+                </li>
+               
+                <li>
+                    <a href="#"><i class="fa fa-caret-down"></i>Special</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-search"></i>Find</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-anchor"></i>Toys<i class="fa fa-caret-down"></i></a>
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-clipboard"></i>Wooden</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-circle-o"></i>Plastic</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-gavel"></i>Iron</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+          </section>
+          <i class="fa fa-anchor" id="menubar"></i>
+          <!-- featured start -->
+          <section class="featured">
+              <div class="featured-text">
+                  <button>Coming Soon</button>
+                  <h2>Our New Deigns</h2>
+              </div>
+          </section>
+      </header>
+      <!-- lets section start -->
+      <section class="latest">
+          <div class="product-intro">
+              <h1>New <span>Arrivals</span></h1>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit !
+              </p>
+          </div>
+          <div class="card-container">
+              <div class="card">
+                  <div>
+                      <img src="s2.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s8.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s3.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s2.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+          </div>
+          <div class="card-container">
+              <div class="card">
+                  <div>
+                      <img src="s2.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s8.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s3.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="s2.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+          </div>
+      </section>
+      <!-- popular product start-->
+      <section class="latest">
+          <div class="product-intro">
+              <h1>Popular <span>Products</span></h1>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit !
+              </p>
+          </div>
+          <div class="card-container">
+              <div class="card">
+                  <div>
+                      <img src="bu1.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="bu2.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="bu4.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+              <div class="card">
+                  <div>
+                      <img src="bu8.jpg" alt="" />
+                  </div>
+                  <h1>Branded Shoes</h1>
+                  <span>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                  </span>
+                  <p>$500.00</p>
+                  <button>Add to cart</button>
+              </div>
+          </div>
+      </section>
+      <section class="trends">
+          <div class="product-intro">
+              <h1>Top<span>Trends</span></h1>
+              <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit !
+              </p>
+          </div>
+          <div class="swiper-container mySwiper">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                      <img src="headphone1.png" />
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="headphone2.png" />
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="headphone3.png" />
+                  </div>
+                  <div class="swiper-slide">
+                      <img src="headphone1.png" />
+                  </div>
+                  <div class="swiper-pagination">
+
+                  </div>
+              </div>
+          </div>
+      </section>
+        <footer>
+            <div>
+             <h1>Apni <span>Dukan</span></h1><br>
+             <p>Everything for Kids World</p>  
+            </div>
+            <div>
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-whatsapp"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-pinterest"></i>
+                <p><br>Design By Mahesh Utage</p>
+            </div>
+            <div>
+                <p>@2023 Copyright All Right Reseeved</p>
+            </div>
+        </footer>
+      <script>
+          var swiper = new Swiper(".mySwiper", {
+              effect: "coverflow",
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: "auto",
+              coverflowEffect: {
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 1200,
+                  modifier: 1,
+                  slideShadows: false,
+              },
+              pagination: {
+                  el: ".swiper-pagination",
+              },
+          });
+      </script>
+      <script>
+        var sidenav=document.getElementById("sidenav");
+        var menubar=document.getElementById("menubar");
+        sidenav.style.width="0px"
+        menubar.onclick=function(){
+            if(sidenav.style.width=="0px"){
+                sidenav.style.width="250px";
+            }
+            else{
+                sidenav.style.width="0px"
+            }
+        }
+      </script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  </body>
+</html>
